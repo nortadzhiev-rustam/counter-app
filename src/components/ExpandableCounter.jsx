@@ -11,7 +11,9 @@ import {
   CardContent,
   CardActions,
   Backdrop,
+  IconButton,
 } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 
 function ExpandableCounter({ counters, onIncrement }) {
   const [selectedId, setSelectedId] = useState(null);
@@ -45,13 +47,25 @@ function ExpandableCounter({ counters, onIncrement }) {
         <Box
           onClick={(e) => e.stopPropagation()}
           sx={{
+            position: 'relative',
             bgcolor: 'background.paper',
             p: 4,
             borderRadius: 2,
-            width: '90%',
+            width: { xs: '100vw', md: '100vw', lg: '50vw', xl: '50vw' },
             maxWidth: 600,
+            mx: 'auto',
           }}
         >
+          <IconButton
+            onClick={handleClose}
+            sx={{
+              position: 'absolute',
+              top: 2,
+              right: 2,
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
           <Card>
             <CardContent>
               <Typography variant='h5' gutterBottom>
