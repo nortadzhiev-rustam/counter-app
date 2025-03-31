@@ -46,9 +46,10 @@ function Layout({ children }) {
         component='main'
         sx={{
           flexGrow: 1,
-          width: '100vw', // changed from '100%'
+          width: { xs: '100vw' }, // changed from '100%'
           mt: '64px', // height of AppBar
           minHeight: 'calc(100vh - 64px)', // full height minus AppBar
+          justifyContent: 'center',
         }}
       >
         {children}

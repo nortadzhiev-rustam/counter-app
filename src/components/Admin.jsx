@@ -70,13 +70,15 @@ function Admin() {
   };
 
   return (
-    <Container maxWidth='lg'>
+    <Container maxWidth='md'>
       <Box sx={{ mt: 4, mb: 4 }}>
         <Paper sx={{ p: 4 }}>
           <Typography variant='h4' component='h1' gutterBottom>
             Admin Dashboard
           </Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+          <Box
+            sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' } }}
+          >
             <Box component='form' onSubmit={handleSubmit} sx={{ mt: 3 }}>
               <TextField
                 fullWidth
