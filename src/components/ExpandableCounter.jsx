@@ -111,12 +111,16 @@ function ExpandableCounter({ counters, onIncrement }) {
                           : 'default',
                     }}
                   >
-                    <Typography variant='h6'>
-                      {selectedCounter.currentNumber >=
-                      selectedCounter.targetNumber
-                        ? 'Done'
-                        : `${selectedCounter.currentNumber} / ${selectedCounter.targetNumber}`}
-                    </Typography>
+                    {selectedCounter.currentNumber == 0 ? (
+                      <Typography variant='h6'>Click to start!</Typography>
+                    ) : (
+                      <Typography variant='h6'>
+                        {selectedCounter.currentNumber >=
+                        selectedCounter.targetNumber
+                          ? 'Done'
+                          : `${selectedCounter.currentNumber} / ${selectedCounter.targetNumber}`}
+                      </Typography>
+                    )}
                   </Box>
                 </Box>
               </Box>
